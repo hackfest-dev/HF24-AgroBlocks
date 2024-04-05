@@ -1,5 +1,4 @@
 import { useEffect, useState, useContext } from "react";
-
 import { TrackingContext } from "../Conetxt/TrackingContext";
 import { Nav1, Nav2, Nav3 } from "../Components/index";
 export default () => {
@@ -32,10 +31,10 @@ export default () => {
         <div className="flex items-center justify-between py-5 md:block">
           <a href="javascript:void(0)">
             <img
-              src="https://www.floatui.com/logo.svg"
+              src="C:\Users\HP\Downloads\WhatsApp Image 2024-04-06 at 00.54.29_c970ed61.svg"
               width={120}
               height={50}
-              alt="Float UI logo"
+              alt="AgroBlocks"
             />
           </a>
           <div className="md:hidden">
