@@ -1,14 +1,17 @@
 import { useState } from "react";
 
-export default ({ completeModal, setCompleteModal, completeShipment }) => {
+const CompleteShipment = ({ completeModal, setCompleteModal, completeShipment }) => {
   const [completeShip, setCompleteShip] = useState({
-    recevier: "",
+    receiver: "",
     index: "",
+    isComplete: false, // Flag to track if process is complete
   });
 
   const changeStatus = async () => {
-    completeShipment(completeShip);
+    await completeShipment(completeShip); // Wait for completion
+    setCompleteShip({...completeShip, isComplete: true}); // Set flag to true after completion
   };
+
   return completeModal ? (
     <div className="fixed inset-0 z-10 overflow-y-auto">
       <div
@@ -45,12 +48,12 @@ export default ({ completeModal, setCompleteModal, completeShipment }) => {
               <div className="relative mt-3">
                 <input
                   type="text"
-                  placeholder="recevier"
+                  placeholder="receiver"
                   className="w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   onChange={(e) =>
                     setCompleteShip({
                       ...completeShip,
-                      recevier: e.target.value,
+                      receiver: e.target.value,
                     })
                   }
                 />
@@ -75,6 +78,8 @@ export default ({ completeModal, setCompleteModal, completeShipment }) => {
               >
                 Change Status
               </button>
+
+              {completeShip.isComplete && <p className="text-green-500">Process Complete!!!</p>} {/* Conditional rendering of completion message */}
             </form>
           </div>
         </div>
@@ -84,3 +89,5 @@ export default ({ completeModal, setCompleteModal, completeShipment }) => {
     ""
   );
 };
+
+export default CompleteShipment;
