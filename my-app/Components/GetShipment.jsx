@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default ({ getModel, setGetModel, getShipment }) => {
+const GetShipment = ({ getModel, setGetModel, getShipment }) => {
   const [index, setIndex] = useState(0);
   const [singleShipmentData, setSingleShipmentData] = useState();
 
@@ -9,14 +9,18 @@ export default ({ getModel, setGetModel, getShipment }) => {
     setSingleShipmentData(getData);
     console.log(getData);
   };
-  console.log(singleShipmentData);
 
   const converTime = (time) => {
+    if (!time) return ""; // Handle case when time is undefined or null
     const newTime = new Date(time);
+    if (isNaN(newTime.getTime())) return ""; // Handle case when time is not a valid date
     const dataTime = new Intl.DateTimeFormat("en-US", {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
     }).format(newTime);
 
     return dataTime;
@@ -51,7 +55,7 @@ export default ({ getModel, setGetModel, getShipment }) => {
           </div>
           <div className="max-w-sm mx-auto py-3 space-y-3 text-center">
             <h4 className="text-lg font-medium text-gray-800">
-              Product Tracting Details
+              Product Tracking Details
             </h4>
 
             <form onSubmit={(e) => e.preventDefault()}>
@@ -72,23 +76,18 @@ export default ({ getModel, setGetModel, getShipment }) => {
               </button>
             </form>
 
-            {singleShipmentData == undefined ? (
+            {singleShipmentData === undefined ? (
               ""
             ) : (
               <div className="text-left">
-                <p>Sender: {singleShipmentData.sender.slice(0, 25)}...</p>
-                <p>Recevier: {singleShipmentData.receiver.slice(0, 25)}...</p>
+                <p>Sender: {singleShipmentData.sender?.slice(0, 25)}...</p>
+                <p>Receiver: {singleShipmentData.receiver?.slice(0, 25)}...</p>
                 <p>PickupTime: {converTime(singleShipmentData.pickupTime)}</p>
-                <p>
-                  DeliveryTime: {converTime(singleShipmentData.deliveryTime)}
-                </p>
+                <p>DeliveryTime: {converTime(singleShipmentData.deliveryTime)}</p>
                 <p>Distance: {singleShipmentData.distance}</p>
                 <p>Price: {singleShipmentData.price}</p>
                 <p>Status: {singleShipmentData.status}</p>
-                <p>
-                  Paid:{" "}
-                  {singleShipmentData.isPaid ? "Complete" : "Not Complete"}
-                </p>
+                <p>Paid: {singleShipmentData.isPaid ? "Complete" : "Not Complete"}</p>
               </div>
             )}
           </div>
@@ -99,3 +98,5 @@ export default ({ getModel, setGetModel, getShipment }) => {
     ""
   );
 };
+
+export default GetShipment;
