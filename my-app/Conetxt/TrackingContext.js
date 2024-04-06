@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 
 //INTERNAL IMPORT
 import tracking from "../Conetxt/Tracking.json";
-const ContractAddress = "0x2A8032C4C5E014b65f672641c88C09886e59116b";
+const ContractAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa";
 const ContractABI = tracking.abi;
 
 //---FETCHING SMART CONTRACT
@@ -183,7 +183,7 @@ export const TrackingProvider = ({ children }) => {
       console.log(shipment);
       location.reload();
     } catch (error) {
-      console.log("Sorry no chipment", error);
+      console.log("Sorry no shipment", error);
     }
   };
   //---CHECK WALLET CONNECTED
