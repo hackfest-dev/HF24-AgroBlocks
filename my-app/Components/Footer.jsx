@@ -24,14 +24,8 @@ export default () => {
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="justify-between sm:flex">
           <div className="space-y-6">
-            <img src="https://www.floatui.com/logo.svg" className="w-32" />
             <p className="max-w-md">
-<<<<<<< Updated upstream
             The line between disorder and order lies in logistics…
-=======
-              Nulla auctor metus vitae lectus iaculis, vel euismod massa
-              efficitur.
->>>>>>> Stashed changes
             </p>
             <ul className="flex flex-wrap items-center gap-4 text-sm sm:text-base">
               {footerNavs.map((item, idx) => (
@@ -56,11 +50,7 @@ export default () => {
           </div>
         </div>
         <div className="mt-10 py-10 border-t md:text-center">
-<<<<<<< Updated upstream
           <p>© AgroBlocks. All rights reserved.</p>
-=======
-          <p>© 2022 Daulat Hussain. All rights reserved.</p>
->>>>>>> Stashed changes
         </div>
       </div>
     </footer>
