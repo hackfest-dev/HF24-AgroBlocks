@@ -1,10 +1,10 @@
-# HF24-AgroBlocks<br>
+# Team AgroBlocks<br>
 -Dinesh Acharya<br>
 -Matti Nidhi<br>
 -Ananya<br>
 -Ankith M D<br>
 Hello everyone, we are Team AgroBlocks ,crafting a blockchain technology project to ensure food traceability and transparency. Our endeavor aims to enhance the food industry, fostering trust and reliability in the food supply chain.<br>
-#What is the problem?
+#What is the problem?<br>
 Ensuring consumer trust in the food supply chain is crucial. However, several challenges persist, such as a lack of transparency, inadequate information about food production, and uncertainty surrounding food quality and safety. Moreover, ineffective information sharing among stakeholders and accountability issues exacerbate these challenges. Our project is dedicated to tackling these issues directly by utilizing blockchain technology to improve food safety and transparency.<br>
 #Our Solution<br>
 Blockchain technology offers a secure, decentralized ledger storing data in interconnected blocks. Immutable and transparent, it enhances food safety by enabling traceability from farm to fork, minimizing risks and losses. Our project harnesses blockchain for real-time visibility in the food supply chain, fostering collaboration for safety and integrity.<br>
